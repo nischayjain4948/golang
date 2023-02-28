@@ -1,16 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
 func main() {
-	fmt.Println("Welcome to  the  class , we are using the learning concepts..")
-	one := 50
-	var ptrOne = &one // ptrOne is used to hold the address of &one variable.
+	fmt.Println("This file is used to take inputs from cmd")
 
-	fmt.Println(ptrOne)  // printing the address which is store in the variable ptrOne.
-	fmt.Println(*ptrOne) //  printing the value which is present in the *ptrOne address.
-
-	*ptrOne = *ptrOne * 2
-	fmt.Println("After multiplying the pointer from 2 the result is : ", *ptrOne)
-
+	reader := bufio.NewReader(os.Stdin)
+	fmt.Println("Enter your rating -: ")
+	myrating, _ := reader.ReadString('\n')
+	fmt.Println("my ratings are :- ", myrating)
 }
